@@ -59,9 +59,6 @@ fn setup(
     // Display the controls of the scene viewer
     info!("{}", camera_controller);
 
-    // auto exposure
-    let metering_mask = asset_server.load("textures/basic_metering_mask.png");
-
     // camera
     commands.spawn((
         Camera3dBundle {
@@ -73,18 +70,8 @@ fn setup(
             ..default()
         },
         AutoExposureSettings {
-            compensation_curve: compensation_curves.add(
-                AutoExposureCompensationCurve::from_curve(LinearSpline::new([
-                    vec2(-4.0, -2.0),
-                    vec2(0.0, 0.0),
-                    vec2(2.0, 0.0),
-                    vec2(4.0, 2.0),
-                ]))
-                .unwrap(),
-            ),
             speed_brighten: 1.5,
             speed_darken: 0.5,
-            metering_mask: metering_mask.clone(),
             ..default()
         },
         camera_controller,
