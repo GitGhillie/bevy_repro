@@ -2,11 +2,9 @@
 
 mod camera_control;
 
-use bevy::math::cubic_splines::LinearSpline;
-use bevy::math::vec2;
 use bevy::{
     core_pipeline::auto_exposure::{
-        AutoExposureCompensationCurve, AutoExposurePlugin, AutoExposureSettings,
+        AutoExposurePlugin, AutoExposureSettings,
     },
     prelude::*,
 };
@@ -22,11 +20,7 @@ fn main() {
 }
 
 /// set up a simple 3D scene
-fn setup(
-    mut commands: Commands,
-    mut compensation_curves: ResMut<Assets<AutoExposureCompensationCurve>>,
-    asset_server: Res<AssetServer>,
-) {
+fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     // gltf
     commands.spawn(SceneBundle {
         transform: Transform::from_xyz(0.0, 0.0, 0.0),
