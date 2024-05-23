@@ -21,7 +21,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
         ..default()
     });
     commands.spawn(SceneBundle {
-        scene: asset_server.load("stripped/strippedHistory.gltf#Scene0"),
+        scene: asset_server.load("scene.gltf#Scene0"),
         ..default()
     });
 }
