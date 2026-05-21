@@ -1,10 +1,10 @@
 [package]
 name = "bevy_repro"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
-bevy = { git="https://github.com/bevyengine/bevy.git", rev = "4dbfdcf", features = ["jpeg"] }
+bevy = { git="https://github.com/bevyengine/bevy.git", rev = "5897ed6", features = ["jpeg"] }
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
